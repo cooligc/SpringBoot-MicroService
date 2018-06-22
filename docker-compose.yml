@@ -1,0 +1,25 @@
+discovery:
+  build: ./microservice-ds
+  ports:
+    - "8761:8761"
+uaa-service:
+  build: ./uaa-ms
+  ports:
+    - "8080"
+  links:
+    - discovery
+
+employee-ms:
+  build: ./employee-ms
+  ports:
+    - "9093"
+  links:
+    - discovery
+
+api-gateway:
+  build: ./microservice-api-gateway
+  ports:
+    - "9595:9595"
+  links:
+    - discovery
+

@@ -2,9 +2,10 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
+    preferIpAddress: true
   client:
     service-url:
-      defaultZone:  http://localhost:8761/eureka
+      defaultZone:  http://discovery:8761/eureka
 
       
 zuul:
